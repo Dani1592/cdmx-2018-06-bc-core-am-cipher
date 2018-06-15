@@ -1,36 +1,24 @@
-function cifradoCesar() {
-  let dato= document.getElementById('caja1').value;
-  let dato2= document.getElementById('caja2');
-  let dato3= document.getElementById('caja3');
-  let ca = [];
-  let cc = [];
-  dato= dato.split('');
+let dato = document.getElementById('caja1');
+let offset = document.getElementById('caja2');
+let dato3 = document.getElementById('caja3');
+//let dato4 = document.getElementById('caja3');
+let dato5 = document.getElementById('caja1');
+boton1 = document.getElementById("boton1")
+//function () => {
 
-  for (let i = 0; i < dato.length; i++){
-    let x = dato[i].charCodeAt(0)
-    ca[i] = x
-    ca[i] =(x-65+3)%26+65
-    cc[i] = String.fromCharCode(ca[i]);
-  }
-  dato2.value=ca;
-  dato3.value=cc.join('');
-}
-//comentario sin funcion
-function cifradoCesarTwo() {
-  let dato= document.getElementById('caja1');
-  let dato2= document.getElementById('caja2');
-  let dato3= document.getElementById('caja3').value;
-  let ca = [];
-  let cc = [];
-  dato3= dato3.split('');
+//}return cipher.encode (dato.value,offset.value)
+///const printEncode = () => {
+//  let dato = dato.value
+//  let offset = offset.value
+  //dato3.innerHTML = cipher.encode(dato,offset)
+  //console.log(printEncode)
+//}
+///dato4.value = cc.join('')
+//dato5.value = cc.join('');
 
-  for (let i = 0; i < dato3.length; i++){
-    let x = dato3[i].charCodeAt(0)
-    ca[i] = x
-    ca[i] =(x-65-3)%26+65
-    cc[i] = String.fromCharCode(ca[i]);
-  }
-  console.log(ca,cc)
-  dato2.value=ca;
-  dato.value=cc.join('');
-}
+boton1.addEventListener("click", event => {
+  let respuesta = window.cipher.encode(dato.value, offset.value)
+  dato3.value = respuesta;
+    //console.log(resultado)
+
+})
